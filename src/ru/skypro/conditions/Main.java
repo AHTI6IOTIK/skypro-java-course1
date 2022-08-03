@@ -60,7 +60,10 @@ public class Main {
         for (int i = currentYear - lastYears; i < currentYear + frontYears; i += step) {
             if (i % cometShown == 0) {
                 System.out.println(i);
-                step = cometShown;
+
+                if (step != cometShown) {
+                    step = cometShown;
+                }
             }
         }
     }
