@@ -1,6 +1,7 @@
 package ru.skypro.conditions;
 
 import java.util.Arrays;
+import java.util.OptionalDouble;
 import java.util.OptionalInt;
 
 public class Main {
@@ -44,11 +45,16 @@ public class Main {
             return;
         }
 
-        int sum = Arrays.stream(intArray).sum();
+        OptionalDouble avg = Arrays.stream(intArray).average();
+
+        if (avg.isEmpty()) {
+            System.out.println("Не удалось получить среднюю сумму");
+            return;
+        }
 
         System.out.printf(
                 "Средняя сумма трат за месяц составила %s рублей.%n",
-                sum / intArray.length
+                avg.getAsDouble() / intArray.length
         );
     }
 
@@ -76,7 +82,7 @@ public class Main {
         return false;
     }
 
-    public static int[] generateRandomArray() {
+    private static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
