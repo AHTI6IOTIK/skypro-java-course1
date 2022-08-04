@@ -74,7 +74,7 @@ public class Main {
         // TASK 4
 
         for (int i = 0 ; i < arrInts.length ; i++) {
-            if (arrInts[i] % 3 == 0) {
+            if (arrInts[i] % 2 != 0) {
                 arrInts[i]++;
             }
 
