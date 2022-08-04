@@ -10,11 +10,11 @@ public class Main {
         task1(randomArray);
         task2(randomArray);
         task3(randomArray);
-        task4(randomArray);
+        task4();
     }
 
     private static void task1(int[] intArray) {
-        if (!checkArrayLength(intArray)) {
+        if (isCorrectMonthLength(intArray)) {
             return;
         }
 
@@ -26,7 +26,7 @@ public class Main {
     }
 
     private static void task2(int[] intArray) {
-        if (!checkArrayLength(intArray)) {
+        if (isCorrectMonthLength(intArray)) {
             return;
         }
         OptionalInt min = Arrays.stream(intArray).min();
@@ -40,7 +40,7 @@ public class Main {
     }
 
     private static void task3(int[] intArray) {
-        if (!checkArrayLength(intArray)) {
+        if (isCorrectMonthLength(intArray)) {
             return;
         }
 
@@ -52,11 +52,11 @@ public class Main {
         );
     }
 
-    private static void task4(int[] intArray) {
+    private static void task4() {
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
         System.out.println(
-                new StringBuilder(String.valueOf(reverseFullName)).reverse().toString()
+                new StringBuilder(String.valueOf(reverseFullName)).reverse()
         );
 
         char[] correctFullName = new char[reverseFullName.length];
@@ -67,13 +67,13 @@ public class Main {
         System.out.println(correctFullName);
     }
 
-    private static boolean checkArrayLength(int[] array) {
+    private static boolean isCorrectMonthLength(int[] array) {
         if (array.length > MAX_MONTH_DAYS) {
             System.out.printf("В месяце не может быть %s дней%n", array.length);
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     public static int[] generateRandomArray() {
