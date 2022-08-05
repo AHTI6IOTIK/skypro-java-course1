@@ -54,7 +54,7 @@ public class Main {
 
         System.out.printf(
                 "Средняя сумма трат за месяц составила %s рублей.%n",
-                avg.getAsDouble() / intArray.length
+                avg.getAsDouble()
         );
     }
 
