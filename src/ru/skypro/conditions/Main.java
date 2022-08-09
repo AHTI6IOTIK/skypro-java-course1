@@ -9,13 +9,13 @@ public class Main {
         int year = 2012;
         int deliveryDistance = 95;
 
-        Main.task1(year);
-        Main.task2(clientOS, clientDeviceYear);
+        task1(year);
+        task2(clientOS, clientDeviceYear);
         System.out.printf("Потребуется дней: %s%n", Main.task3(deliveryDistance));
     }
 
     private static void task1(int year) {
-        if (year % 4 == 0) {
+        if (isLeapYear(year)) {
             System.out.printf("%s год является високосным%n", year);
         } else {
             System.out.printf("%s год не является високосным%n", year);
@@ -71,5 +71,14 @@ public class Main {
         } else {
             return "iOS";
         }
+    }
+
+    /**
+     * проверяет является ли год високосным
+     * @param year int
+     * @return bool
+     */
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 || year % 400 == 0) && year % 100 != 0;
     }
 }
