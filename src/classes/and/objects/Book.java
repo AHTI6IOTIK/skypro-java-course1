@@ -3,11 +3,11 @@ package classes.and.objects;
 import java.util.Objects;
 
 public class Book {
-    String name;
-    Author author;
-    int publishYear;
+    private final String name;
+    private final Author author;
+    private int publishYear;
 
-    public Book(String name, Author author, int publishYear) throws AuthorNotFilled {
+    public Book(String name, Author author, int publishYear) {
 
         if (Objects.isNull(author)) {
             throw new AuthorNotFilled();

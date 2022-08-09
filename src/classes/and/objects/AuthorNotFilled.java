@@ -1,4 +1,4 @@
 package classes.and.objects;
 
-public class AuthorNotFilled extends Exception {
+public class AuthorNotFilled extends RuntimeException {
 }

@@ -1,9 +1,9 @@
 package classes.and.objects;
 
 public class Author {
-    String firstName;
-    String middleName;
-    String lastName;
+    private final String firstName;
+    private final String middleName;
+    private final String lastName;
 
     public Author(String firstName, String middleName, String lastName) {
         this.firstName = firstName;
