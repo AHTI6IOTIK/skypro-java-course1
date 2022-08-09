@@ -1,4 +1,4 @@
-package ru.skypro.conditions;
+package methods;
 
 import java.time.LocalDate;
 
